@@ -1,1 +1,1 @@
-# JS-code-for-coding-problems
+coding problems and solutions
