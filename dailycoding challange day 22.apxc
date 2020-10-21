@@ -1,0 +1,37 @@
+ public class DailyCodingChallane {   
+    private static List<String> solution(Set<String> words, String str){
+        Integer startIdx = 0;
+        Integer endIdx = 1;
+        List<String> result = new List<String>();
+        Integer n = str.length();
+        while(endIdx<=n){
+            
+            String word = str.subString(startIdx, endIdx);
+            if(words.contains(word)){
+                result.add(word);
+                startIdx = endIdx;
+                endIdx = endIdx+1;
+            }else{
+                ++endIdx;
+            }
+        }
+        if(startIdx == endIdx-1){
+            return result;
+        }else{
+            return null;
+        }
+    }
+    
+    public static void main(){
+        
+        Set<String> words = new Set<String>();
+        words.add('the');
+        words.add('quick');
+        words.add('brown');
+        words.add('fox');
+        String str = 'brownthequick';
+        System.debug(solution(words, str));
+        
+        
+    }    
+}
